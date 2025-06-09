@@ -30,7 +30,7 @@ app.MapGet("/sse-demo", (CancellationToken cancellationToken) =>
             await Task.Delay(TimeSpan.FromSeconds(2), ct);
             yield return new SseItem<MockDataModel>(DataGenerator.CreateMockData(), "mock-data")
             {
-                ReconnectionInterval = TimeSpan.FromMinutes(1),
+                ReconnectionInterval = TimeSpan.FromMinutes(5),
             };
         }
     } 
